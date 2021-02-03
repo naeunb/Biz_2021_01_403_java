@@ -12,4 +12,8 @@
 ##### 2021-02-03
 * github를 사용하여 프로젝트 공유하기
 * 1. README.md 파일에 내용추가
-	README 편집하기
+*	 README 편집하기
+
+##### git commit 명령 오류상황
+* git commit -m 까지만 입력하면 error발생
+* git commit 까지만 입력하면 vi editor
