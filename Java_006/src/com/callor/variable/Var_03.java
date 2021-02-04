@@ -1,4 +1,4 @@
-package com.callor.varriable;
+package com.callor.variable;
 
 public class Var_03 {
 	public static void main(String[] args) {
@@ -6,6 +6,7 @@ public class Var_03 {
 		System.out.println("구구단");
 		System.out.println("--------");
 		
+			
 		int intDan = 3;
 		int num1 = 1;
 		

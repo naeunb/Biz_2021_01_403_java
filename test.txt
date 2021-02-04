@@ -1,0 +1,15 @@
+Republic of Korea
+대한민국 만세
+우리나라 만세
+viva Korea
+Welcome to Korea
+
+// 여기는 main method
+public static void main(String args[]) {
+	System.out.println("대한민국만세");
+}
+
+// vi editor를 이용하여 Text문서를 작성 중
+
+:wq
+:q

@@ -1,4 +1,4 @@
-package com.callor.varriable;
+package com.callor.variable;
 
 public class Var_01 {
 	public static void main(String args[]) {
