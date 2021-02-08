@@ -39,7 +39,7 @@ public class Multiple_02 {
 		}
 		System.out.println(intSum1);
 		
-		
+		System.out.println("================");
 		
 		int intSum2 = 0;
 
@@ -54,6 +54,8 @@ public class Multiple_02 {
 				intSum2 += num;
 			}
 		}
+		System.out.println("================");
+		
 		System.out.println(intSum2);
 		
 		
