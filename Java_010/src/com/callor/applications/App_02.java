@@ -7,7 +7,7 @@ public class App_02 {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.print("숫자입력 >> ");
+		System.out.print("숫자입력(2~9) >> ");
 		int keyDan = scan.nextInt();
 
 		if(keyDan > 9 || keyDan < 2) {
