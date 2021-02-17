@@ -21,42 +21,103 @@ public class ScoreService {
 		 */
 		public void score() {
 			Scanner scan = new Scanner(System.in);
-
+			
+			
+			int numKor = 0;
 			while(true) {
 				System.out.print("국어점수 입력 >> ");
-				int numKor = scan.nextInt();
-				boolean bYesKor = numKor >= 0 && numKor <= 100;
-				if(bYesKor == false) {
-					System.out.println("다시입력하세요");
-				} else {
-				}
-				
-				System.out.print("영어점수 입력 >> ");
-				int numEng = scan.nextInt();
-				System.out.print("수학점수 입력 >> ");
-				int numMath = scan.nextInt();
-				
-				boolean bYesEng = numEng >= 0 && numEng <= 100;
-				boolean bYesMath = numMath >= 0 && numMath <= 100;
-				
-				if(bYesKor && bYesEng && bYesMath) {
-					System.out.println("====================================");
-					System.out.println("국어\t영어\t수학\t총점\t평균");
-					System.out.println("------------------------------------");
-					System.out.print(numKor+"\t");
-					System.out.print(numEng+"\t");
-					System.out.print(numMath+"\t");
-					int sum = numKor;
-					sum += numEng;
-					sum += numMath;
-					System.out.print(sum+"\t");
-					float fAvg = sum/3f;
-					System.out.println(fAvg);
-					System.out.println("====================================");
+				numKor = scan.nextInt();
+				if(numKor >= 0 && numKor <= 100 == true) {
 					break;
 				} else {
 					System.out.println("다시입력하세요");
 				}
 			}
-		}
-}
+			
+			int numEng = 0;
+			while(true) {
+				System.out.print("영어점수 입력 >> ");
+				numEng = scan.nextInt();
+				if(numEng >= 0 && numEng <= 100 == true) {
+					break;
+				} else {
+					System.out.println("다시입력하세요");
+				}
+			}
+			
+			int numMath = 0;
+			while(true) {
+				System.out.print("수학점수 입력 >> ");
+				numMath = scan.nextInt();
+				if(numMath >= 0 && numMath <= 100 == true) {
+					break;
+				} else {
+					System.out.println("다시입력하세요");
+				}
+			}
+
+			int sum = numKor+numEng+numMath;
+			float fAvg = sum/3f;
+			System.out.println("====================================");
+			System.out.println("국어\t영어\t수학\t총점\t평균");
+			System.out.println("------------------------------------");
+			System.out.print(numKor+"\t");
+			System.out.print(numEng+"\t");
+			System.out.print(numMath+"\t");
+			System.out.print(sum + "\t");
+			System.out.println(fAvg);
+			System.out.println("====================================");
+			
+		}// score end
+}// class end
+
+
+
+
+// 틀린 수를 입력하면 "다시입력하세요" 문구와 함께 다시 입력할수있게 하고싶음
+// 문제1 .1번째 while에 break를 사용하면 다시입력할수없음..
+/*
+			while(true) {
+				System.out.print("국어점수 입력 >> ");
+				int numKor = scan.nextInt();
+				if(numKor >= 0 && numKor <= 100 == true) {
+
+					while(true) {
+						System.out.print("영어점수 입력 >> ");
+						int numEng = scan.nextInt();
+						if(numEng >= 0 && numEng <= 100 == true) {
+							while(true) {
+								System.out.print("수학점수 입력 >> ");
+								int numMath = scan.nextInt();
+								if(numMath >= 0 && numMath <= 100 == true) {
+									System.out.println("====================================");
+									System.out.println("국어\t영어\t수학\t총점\t평균");
+									System.out.println("------------------------------------");
+									System.out.print(numKor+"\t");
+									System.out.print(numEng+"\t");
+									System.out.print(numMath+"\t");
+									int sum = numKor+numEng+numMath;
+									float fAvg = sum/3f;
+									System.out.print(sum + "\t");
+									System.out.println(fAvg);
+									System.out.println("====================================");
+									break;
+								} else {
+									System.out.println("다시입력하세요");
+								}
+								
+							}// 3번째 while end
+							break;
+						} else {	//비교문 end
+							System.out.println("다시입력하세요");
+						}
+						//break;
+					}//  2번째 while end
+				} else { // 1 번째 if end
+					System.out.println("다시입력하세요");
+				}
+				//break;
+				
+			}// 첫번째 while end
+
+*/

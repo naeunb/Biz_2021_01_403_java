@@ -1,6 +1,6 @@
 package com.callor.hello;
 
-// clss : java코드의 가장 기본 구조
+// class : java코드의 가장 기본 구조
 // 파일명 = 클래스명.java
 // 클래스명 : 첫글자 대문자
 //			  소문자,숫자,_를 조합하여 이름 짓기

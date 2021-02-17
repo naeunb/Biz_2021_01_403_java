@@ -24,7 +24,7 @@ public class Score_01 {
 			System.out.print("국어점수 입력 >> ");
 			//scan.nextInt()메서드를 호출하면 코드 동작이 멈추고 사용자가 키보드로 무엇인가 입력한 후 enter를
 			//누를때까지 이후 코드가 실행되지않음  => code blocking
-			int numKor = scan.nextInt();
+			int numKor = scan.nextInt();  
 			System.out.print("영어점수 입력 >> ");
 			int numEng = scan.nextInt();
 			System.out.print("수학점수 입력 >> ");
