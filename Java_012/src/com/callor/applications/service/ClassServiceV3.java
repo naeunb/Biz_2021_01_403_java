@@ -17,6 +17,8 @@ public class ClassServiceV3 {
 	public void scope() {
 		System.out.println("숫자를 입력하세요");
 		int intNum1 = scan.nextInt();
+		
+		//method선언 명령문에 void키워드가 있으면 이 위치에 return명령문이 있는것과 같음.
 	}
 	
 	public void input() {

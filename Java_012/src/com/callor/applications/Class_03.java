@@ -9,5 +9,6 @@ public class Class_03 {
 
 		csV3.input();
 		csV3.algebra();
+		
 	}
 }
