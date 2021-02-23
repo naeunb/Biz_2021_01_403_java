@@ -22,9 +22,5 @@ public class Prime_03 {
 		} else {
 			System.out.println(key+" : 소수");
 		}
-		
-		
-		
-		
 	} 
 }
