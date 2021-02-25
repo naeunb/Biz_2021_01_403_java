@@ -25,9 +25,24 @@ public class Score_03 {
 			sVO.setIntKor(strKor);
 			
 			//intKor에 -1이 담겨있으면 다시 입력을 하도록 해야함.
-			if(sVO.intKor<0) {
+			if(sVO.getIntKor() < 0) {
+				System.out.println("국어점수 유효성 검사 실패");
 				continue;
 			}
+			break;
+		}
+		
+		while(true) {
+			System.out.print("영어점수 >> ");
+			String strEng = scan.nextLine();
+			
+			sVO.setIntEng(strEng);
+			
+			if(sVO.getIntEng() < 0) {
+				System.out.println("영어점수 유효성 검사 실패");
+				continue;
+			}
+			break;
 		}
 	}
 }

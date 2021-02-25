@@ -24,8 +24,10 @@ public class Score_02 {
 		 * 2. inputScore 메서드에 string매개변수를 선언하고
 		 * 3. 메인에서 문자열값을 넘겨줌 ssV1.inputScore("국어");
 		 */
-		sVO.intKor = ssV1.inputScore("국어");
-		sVO.intEng = ssV1.inputScore("영어");
+		//sVO.intKor = ssV1.inputScore("국어");
+		//sVO.intEng = ssV1.inputScore("영어");
+		sVO.setIntKor(ssV1.inputScore("국어")+"");
+		sVO.setIntEng(ssV1.inputScore("영어")+"");
 		sVO.intMath = ssV1.inputScore("수학");
 		
 		/*
