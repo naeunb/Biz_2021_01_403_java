@@ -26,7 +26,7 @@ public class MenuServiceV1 implements MenuService {
 			System.out.print("선택 >> ");
 			String strMenu = scan.nextLine();
 			
-			if(strMenu.equals("QUIT")) {
+			if(strMenu.equalsIgnoreCase("QUIT")) {
 				System.out.println("종료");
 				break;
 			}
