@@ -1,23 +1,17 @@
 package com.callor.shop;
 
-import com.callor.shop.service.CartService;
+import com.callor.shop.service.CartServiceV2;
 import com.callor.shop.service.MenuService;
-import com.callor.shop.service.impl.CartServiceImplV1;
+import com.callor.shop.service.impl.CartServiceImplV2;
 import com.callor.shop.service.impl.MenuServiceImplV1;
 import com.callor.shop.values.Values;
 
-public class CartEx_01 {
+public class CartEx_03 {
 
 	public static void main(String[] args) {
-		
-		//클래스로 선언, 클래스로 생성
-		MenuServiceImplV1 ms = new MenuServiceImplV1();
-		CartService cService = new CartServiceImplV1();
-		
-		//인터페이스로 선언, 클래스로 생성
-		//인터페이스를 implements하여 작성된 클래스는 인터페이스로 선언을 하자.
-		//그래야 코드 업그레이드가 조금 쉬워짐.
+
 		MenuService mService = new MenuServiceImplV1();
+		CartServiceV2 cService = new CartServiceImplV2();
 		
 		while(true) {
 			Integer menuItem = mService.selectMenu();
@@ -29,6 +23,8 @@ public class CartEx_01 {
 				cService.printAllCart();
 			} else if(menuItem == Values.MENU_USER_LIST) {
 				cService.printUserCart();
+			} else if(menuItem == Values.MENU_SAVE_CART_LIST) {
+				cService.saveCartToFile();
 			}
 		}
 		System.out.println("업무종료! 퇴근~~");
