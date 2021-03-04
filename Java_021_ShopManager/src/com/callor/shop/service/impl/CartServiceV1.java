@@ -13,9 +13,9 @@ public class CartServiceV1 implements CartService { // CartService를 implements
 
 	//leak(누수)을 방지하기 위해 인스턴스 객체,변수로 선언'만' 하고 클래스생성자에서 초기화 시킴. => 메모리관리
 	private List<CartVO> cartList;
-	private Scanner scan;
+	private Scanner scan; //Scanner 클래스를 사용해서 scan이라는 객체를 선언.
 	public CartServiceV1() {
-		scan = new Scanner(System.in);
+		scan = new Scanner(System.in); //scan 객체를 사용하기 위해 초기화(생성) =>사용할 준비를 하는것.
 		cartList = new ArrayList<CartVO>();
 	}
 	
@@ -83,11 +83,14 @@ public class CartServiceV1 implements CartService { // CartService를 implements
 		System.out.println("----------------------------------------------");
 		int nSize = cartList.size(); //배열의 개수를 알수있는 키워드 size()를 사용. 졍수형 변수 nSize에 저장 
 		for(int i=0; i<nSize; i++) { //배열의 개수만큼 반복
+			/*
 			System.out.print(cartList.get(i).getUserName()+"\t"); //배열에 저장되어있는 값을 불러와서 출력.
 			System.out.print(cartList.get(i).getProductName()+"\t");
 			System.out.print(cartList.get(i).getPrice()+"\t");
 			System.out.print(cartList.get(i).getQty()+"\t");
 			System.out.print(cartList.get(i).getTotal()+"\n");
+			*/
+			cartList.get(i).toString(); //구매자리스트와 중복코드를 줄이기 위해 toString 사용
 			totalPrice += cartList.get(i).getTotal();
 		}
 		System.out.println("----------------------------------------------");
@@ -112,11 +115,7 @@ public class CartServiceV1 implements CartService { // CartService를 implements
 		int countPrd = 0; //상품항목수를 구하기 위해 변수선언 및 초기화
 		for(int i=0; i<nSize; i++) {
 			if(cartList.get(i).getUserName().equals(strUserName)) {//입력받은 구매자이름을 배열리스트에서 대조.
-				System.out.print(cartList.get(i).getUserName()+"\t");
-				System.out.print(cartList.get(i).getProductName()+"\t");
-				System.out.print(cartList.get(i).getPrice()+"\t");
-				System.out.print(cartList.get(i).getQty()+"\t");
-				System.out.print(cartList.get(i).getTotal()+"\n");
+				cartList.get(i).toString();
 				totalPrice += cartList.get(i).getTotal();
 				countPrd++; //반복되는만큼 1씩 증가해서 항목개수를 알수있음.
 			}
