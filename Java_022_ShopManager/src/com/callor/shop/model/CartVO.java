@@ -8,6 +8,21 @@ public class CartVO {
 	private int price;
 	private int total;
 	
+	/*
+	 * 매개변수가 있는 생성자를 만들게되면
+	 * 매개변수가 없는 기본생성자를 반드시 만들어줘야한다.
+	 */
+	public CartVO() {
+		
+	}
+	
+	public CartVO(String userName, String pName, int qty, int price) {
+		this.userName = userName;
+		this.productName = pName;
+		this.qty = qty;
+		this.price = price;
+	}
+	
 	public String getUserName() {
 		return userName;
 	}
