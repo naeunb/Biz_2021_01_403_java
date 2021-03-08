@@ -9,9 +9,6 @@ import com.callor.score.service.values.Values;
 public class ScoreSystem {
 	public static void main(String[] args) {
 		
-		//MenuServiceImplV1 msV1 = new MenuServiceImplV1();
-		//msV1.selectMenu();
-		
 		MenuService msV1 = new MenuServiceImplV1();
 		ScoreService ssV1 = new ScoreServiceImplV1();
 		
