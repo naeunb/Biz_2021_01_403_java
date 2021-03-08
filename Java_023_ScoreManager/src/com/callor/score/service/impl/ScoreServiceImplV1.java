@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import com.callor.score.service.ScoreService;
@@ -55,16 +57,6 @@ public class ScoreServiceImplV1 implements ScoreService {
 
 		for(int i=0; i<intKorScore.length; i++) {//평균점수 변수에 저장
 			floatAvgScore[i] = (float)intTotalScore[i]/3;
-			/*
-			System.out.print(i+1+"\t");
-			System.out.print(intKorScore[i]+"\t");
-			System.out.print(intEngScore[i]+"\t");
-			System.out.print(intMathScore[i]+"\t");
-			System.out.print(intMusicScore[i]+"\t");
-			System.out.print(intHistoryScore[i]+"\t");
-			System.out.print(intTotalScore[i]+"\t");
-			System.out.printf("%3.2f\n",floatAvgScore[i]);
-			*/
 		}
 		System.out.println("\n생성완료\n");
 	}
@@ -75,23 +67,20 @@ public class ScoreServiceImplV1 implements ScoreService {
 		PrintWriter printer = null;
 		
 		String fileName = "src/com/callor/score/score.txt";
+
 		
 		try {
 			fileWriter = new FileWriter(fileName);
-			
 			printer = new PrintWriter(fileWriter);
 
-			printer.println("\n"+Values.dLineLong);
-			printer.println("순번\t국어\t영어\t수학\t음악\t국사\t총점\t평균");
-			printer.println(Values.sLineLong+"\n");
 			for(int i=0; i<intKorScore.length; i++) {
-				printer.print(i+1+"\t");
-				printer.print(intKorScore[i]+"\t");
-				printer.print(intEngScore[i]+"\t");
-				printer.print(intMathScore[i]+"\t");
-				printer.print(intMusicScore[i]+"\t");
-				printer.print(intHistoryScore[i]+"\t");
-				printer.print(intTotalScore[i]+"\t");
+				printer.print(i+1+":");
+				printer.print(intKorScore[i]+":");
+				printer.print(intEngScore[i]+":");
+				printer.print(intMathScore[i]+":");
+				printer.print(intMusicScore[i]+":");
+				printer.print(intHistoryScore[i]+":");
+				printer.print(intTotalScore[i]+":");
 				printer.printf("%3.2f\n",floatAvgScore[i]);
 			}
 			printer.close();
@@ -109,6 +98,8 @@ public class ScoreServiceImplV1 implements ScoreService {
 	public void loadScoreFromFile() {//저장한 파일 읽기(확인) method
 		FileReader fileReader = null;
 		BufferedReader buffer = null;
+			
+		List<String> strLines = new ArrayList<String>();
 		
 		String fileName = "src/com/callor/score/score.txt";
 		
@@ -116,12 +107,14 @@ public class ScoreServiceImplV1 implements ScoreService {
 			fileReader = new FileReader(fileName);
 			buffer = new BufferedReader(fileReader);
 			
-			
-			String readLine = null;
-			while((readLine = buffer.readLine()) != null) {
-				System.out.println(readLine);
+			while(true) {
+				String data = buffer.readLine();
+				if(data == null) {
+					break;
+				}
+				strLines.add(data);
+				
 			}
-			System.out.println();//enter
 			
 			buffer.close();
 			fileReader.close();
@@ -134,7 +127,29 @@ public class ScoreServiceImplV1 implements ScoreService {
 			e.printStackTrace();
 		}
 		
+
+		System.out.println("\n"+Values.dLineLong);
+		System.out.println("순번\t국어\t영어\t수학\t음악\t국사\t총점\t평균");
+		System.out.println(Values.sLineLong+"\n");
+		
+		for(String str : strLines) {
+			String[] nums = str.split(":");
+			System.out.println();
+		}
+		
 		
 	}
 
 }
+
+
+
+
+
+
+//intList 에 담긴 전체리스트를
+			// 향상된 for로 반복하면서 파일에 출력
+		/*	for(Integer n : intList ) {
+				printer.println(n);
+			}
+*/
