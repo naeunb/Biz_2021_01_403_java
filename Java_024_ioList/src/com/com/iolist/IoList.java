@@ -24,7 +24,7 @@ public class IoList {
 			fileReader = new FileReader(fileName);
 			buffer = new BufferedReader(fileReader);
 			while(true) {
-				String reader = buffer.readLine();
+				String reader = buffer.readLine();//한줄씩 읽고 변수에 저장
 				if(reader == null) {
 					break;
 				}
@@ -63,8 +63,10 @@ public class IoList {
 		for(IoListVO vo : ioList) {
 			if(vo.getSort() == 1) { //sort가 1일때
 				intPrdPrice = vo.getPrdPrice() * vo.getQty(); //매입단가 * 수량
+				vo.setTotalPrdPrice(intPrdPrice);
 			} else if(vo.getSort() == 2) { //2일때
 				intSelPrice = vo.getSelPrice() * vo.getQty(); //판매단가 * 수량
+				vo.setTotalSelPrice(intSelPrice);
 			}
 		}
 		//--------------------------------------------------------
@@ -81,11 +83,11 @@ public class IoList {
 			System.out.print(vo.getCustomer()+"\t");
 			System.out.print(vo.getPrdName()+"\t");
 			if(vo.getSort() == 1) { //sort가 1일때
-				System.out.print(intPrdPrice+"\t");
+				System.out.print(vo.getTotalPrdPrice()+"\t");
 				System.out.print(0+"\n"); //판매금액 0
 			} else if(vo.getSort()==2) { //sort가 2일때
 				System.out.print(0+"\t"); //매입금액 0
-				System.out.print(intSelPrice+"\n");
+				System.out.print(vo.getTotalSelPrice()+"\n");
 			}
 		}
 		//---------------------------------------------------------

@@ -17,6 +17,9 @@ public class IoListVO {
 	private int prdPrice;	 //매입단가
 	private int selPrice;	 //판매단가
 	private int qty;		 //수량
+	private int totalPrdPrice;//매입금액
+	private int totalSelPrice;//판매금액
+	
 	
 	
 	public String getDate() {
@@ -85,6 +88,19 @@ public class IoListVO {
 	public void setQty(int qty) {
 		this.qty = qty;
 	}
+	public int getTotalPrdPrice() {
+		return totalPrdPrice;
+	}
+	public void setTotalPrdPrice(int totalPrdPrice) {
+		this.totalPrdPrice = totalPrdPrice;
+	}
+	public int getTotalSelPrice() {
+		return totalSelPrice;
+	}
+	public void setTotalSelPrice(int totalSelPrice) {
+		this.totalSelPrice = totalSelPrice;
+	}
+	
 	
 	
 	public IoListVO(String date, String nbsp1, String nbsp2, String nbsp3, String prdName, String customer, String ceo,
@@ -108,9 +124,11 @@ public class IoListVO {
 	public String toString() {
 		return "IoListVO [date=" + date + ", nbsp1=" + nbsp1 + ", nbsp2=" + nbsp2 + ", nbsp3=" + nbsp3 + ", prdName="
 				+ prdName + ", customer=" + customer + ", ceo=" + ceo + ", sort=" + sort + ", prdPrice=" + prdPrice
-				+ ", selPrice=" + selPrice + ", qty=" + qty + "]";
+				+ ", selPrice=" + selPrice + ", qty=" + qty + ", totalPrdPrice=" + totalPrdPrice + ", totalSelPrice="
+				+ totalSelPrice + "]";
 	}
 	
+
 	
 	
 	
