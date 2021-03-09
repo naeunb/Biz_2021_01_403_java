@@ -33,8 +33,8 @@ public class IoList {
 				IoListVO vo = new IoListVO(
 						scores[0], //거래일자
 						scores[1], //공백
-						scores[1], //공백
-						scores[1], //공백
+						scores[2], //공백
+						scores[3], //공백
 						scores[4], //상품명
 						scores[5], //거래처명
 						scores[6], //대표자명
