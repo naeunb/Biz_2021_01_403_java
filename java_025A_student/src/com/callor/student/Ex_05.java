@@ -12,7 +12,7 @@ public class Ex_05 {
 		
 		// 2. add() method가 없어서 발생하는 오류
 		// 3. 매개변수 설정이 없어서 발생하는 오류
-		// 4. return tyhpe void 이어서 발생하는 오류
+		// 4. return type이 void 여서 발생하는 오류
 		// 5. method의 return 명령문이 없어서 발생하는 오류
 		int sum = call.add(num1, num2);
 		System.out.println(sum);
